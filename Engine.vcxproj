@@ -148,6 +148,8 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="CtrlFPS.cpp" />
     <ClCompile Include="InitDirectX.cpp" />
+    <ClCompile Include="Model3D.cpp" />
+    <ClCompile Include="Obj3d.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="Util.cpp" />
@@ -193,6 +195,8 @@
     <ClInclude Include="CtrlFPS.h" />
     <ClInclude Include="InitDirectX.h" />
     <ClInclude Include="Input.h" />
+    <ClInclude Include="Model3D.h" />
+    <ClInclude Include="Obj3d.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="Util.h" />

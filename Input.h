@@ -32,6 +32,12 @@ namespace Input {
         static std::array<BYTE, 256> keysPre_;
         static std::array<BYTE, 256> keys_;
     };
+
+    class pad
+    {
+    public: // 関数
+        static void Initialize(void);
+    };
 };
 
 #ifndef NON_NAMESPACE_Input // 定義でusing解除

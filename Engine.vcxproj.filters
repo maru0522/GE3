@@ -58,6 +58,12 @@
     <Filter Include="ヘッダー ファイル\MakeGame">
       <UniqueIdentifier>{d3e6502a-f343-4e6c-91ef-1361126ce9c7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Base\Scene">
+      <UniqueIdentifier>{73a6e022-1afe-45cc-b723-3f25a52bc397}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Base\Scene">
+      <UniqueIdentifier>{62497534-63cf-4816-9a60-57a59ceeb7b1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -129,14 +135,17 @@
     <ClCompile Include="TitleScene.cpp">
       <Filter>ソース ファイル\MakeGame</Filter>
     </ClCompile>
-    <ClCompile Include="BaseScene.cpp">
-      <Filter>ソース ファイル\Base</Filter>
+    <ClCompile Include="Billborad.cpp">
+      <Filter>ソース ファイル\Object\2d</Filter>
     </ClCompile>
     <ClCompile Include="AbstractSceneFactory.cpp">
-      <Filter>ソース ファイル</Filter>
+      <Filter>ソース ファイル\Base\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseScene.cpp">
+      <Filter>ソース ファイル\Base\Scene</Filter>
     </ClCompile>
     <ClCompile Include="SceneFactory.cpp">
-      <Filter>ソース ファイル</Filter>
+      <Filter>ソース ファイル\Base\Scene</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -235,14 +244,17 @@
     <ClInclude Include="TitleScene.h">
       <Filter>ヘッダー ファイル\MakeGame</Filter>
     </ClInclude>
-    <ClInclude Include="BaseScene.h">
-      <Filter>ヘッダー ファイル\Base</Filter>
+    <ClInclude Include="Billborad.h">
+      <Filter>ヘッダー ファイル\Object\2d</Filter>
     </ClInclude>
     <ClInclude Include="AbstractSceneFactory.h">
-      <Filter>ヘッダー ファイル</Filter>
+      <Filter>ヘッダー ファイル\Base\Scene</Filter>
     </ClInclude>
     <ClInclude Include="SceneFactory.h">
-      <Filter>ヘッダー ファイル</Filter>
+      <Filter>ヘッダー ファイル\Base\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseScene.h">
+      <Filter>ヘッダー ファイル\Base\Scene</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

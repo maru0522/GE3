@@ -2,15 +2,22 @@
 #include "Texture.h"
 #include "Model.h"
 #include "Input.h"
+#include "Util.h"
 
 void GameScene::Initialize(SceneManager* pSceneManager)
 {
     BaseScene::Initialize(pSceneManager);
 
+    // テクスチャ読み込み
+    Texture::Load("Resources/GameSprite.png", "gsp");
+    Texture::Load("Resources/papermario.png", "player");
+
     // 変数初期化
     cameraT_ = std::make_unique<Camera>();
-    spriteT_ = std::make_unique<Sprite>("Resources/reimu.png", CMode::PATH);
+    spriteT_ = std::make_unique<Sprite>("gsp", CMode::ID);
     objT_ = std::make_unique<Obj3d>("Resources/3dModels/cube/cube.obj", cameraT_.get());
+    objT_->SetTextureById("player");
+    objT_->worldCoordinate_.rotation_.y = Util::Convert::DegsToRads(-90);
 }
 
 void GameScene::Update(void)

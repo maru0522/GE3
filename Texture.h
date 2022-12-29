@@ -57,6 +57,9 @@ public: // 静的関数
     // ID削除
     static void DeleteId(const std::string& id);
 
+private:
+    static void GenerateMissingTexture(void);
+
 private: // 静的変数
     // エイリアステンプレート
     template<class T> using ComPtr = Microsoft::WRL::ComPtr<T>;

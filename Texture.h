@@ -34,7 +34,9 @@ public: // 静的関数
 
     // 読込 
     static void Load(const fsPath& pathAndFileName);
-    static void Load(const fsPath& pathAndFileName, const std::string& registerId);
+    static void Load(const fsPath& pathAndFileName, const std::string& id);
+
+    static const bool ExistTexture(const std::string& path);
 
     // 読込済のテクスチャの情報だけ返す
     static const TEXTURE_VALUE* GetTextureInfo(const fsPath& pathAndFileName);

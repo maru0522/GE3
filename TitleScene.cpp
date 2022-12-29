@@ -10,7 +10,7 @@ void TitleScene::Initialize(SceneManager* pSceneManager)
     BaseScene::Initialize(pSceneManager);
 
     // テクスチャ読み込み
-    Texture::Load("Resources/reimu.png");
+    Texture::Load("Resources/reimu.png","reimuSprite");
     Texture::Load("Resources/mario.jpg");
     Texture::Load("Resources/thinking.png");
 

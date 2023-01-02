@@ -147,6 +147,9 @@
     <ClCompile Include="SceneFactory.cpp">
       <Filter>ソース ファイル\Base\Scene</Filter>
     </ClCompile>
+    <ClCompile Include="ResourceLoad.cpp">
+      <Filter>ソース ファイル\MakeGame</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="BasicVS.hlsl" />
@@ -255,6 +258,9 @@
     </ClInclude>
     <ClInclude Include="BaseScene.h">
       <Filter>ヘッダー ファイル\Base\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceLoad.h">
+      <Filter>ヘッダー ファイル\MakeGame</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

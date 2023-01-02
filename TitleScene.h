@@ -18,7 +18,11 @@ public: // ŠÖ”
 
 private:
     unique_ptr<Camera> cameraT_{};
-    unique_ptr<Sprite> spriteT_{};
-    unique_ptr<Obj3d> objT_{};
+    std::array<unique_ptr<Sprite>, 6> sprite_titleBackGrounds_{}; // ”wŒiŠG
+    std::array<unique_ptr<Sprite>, 6> sprite_titleBackPieces_{}; // ”wŒiƒAƒCƒeƒ€
+    std::array<unique_ptr<Sprite>, 20> sprite_titleBlocks_{}; // ”wŒiƒAƒCƒeƒ€
+    unique_ptr<Sprite> sprite_titleTree_{ std::make_unique<Sprite>("title_atlas", CMode::ID) };
+    unique_ptr<Sprite> sprite_titleLogo_{ std::make_unique<Sprite>("title_atlas", CMode::ID) };
+    unique_ptr<Sprite> sprite_titleFrame_{ std::make_unique<Sprite>("titleFrame", CMode::ID) };
 };
 

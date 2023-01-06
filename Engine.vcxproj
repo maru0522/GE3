@@ -153,8 +153,10 @@
     <ClCompile Include="AssimpLoader.cpp" />
     <ClCompile Include="BaseScene.cpp" />
     <ClCompile Include="Billborad.cpp" />
+    <ClCompile Include="Block2d.cpp" />
     <ClCompile Include="ResourceLoad.cpp" />
     <ClCompile Include="SceneFactory.cpp" />
+    <ClCompile Include="Stage.cpp" />
     <ClCompile Include="TitleScene.cpp" />
     <ClCompile Include="XAudio.cpp" />
     <ClCompile Include="BasicFrame.cpp" />
@@ -235,8 +237,11 @@
     <ClInclude Include="AssimpLoader.h" />
     <ClInclude Include="BaseScene.h" />
     <ClInclude Include="Billborad.h" />
+    <ClInclude Include="AbstractBlock.h" />
+    <ClInclude Include="Block2d.h" />
     <ClInclude Include="ResourceLoad.h" />
     <ClInclude Include="SceneFactory.h" />
+    <ClInclude Include="Stage.h" />
     <ClInclude Include="TitleScene.h" />
     <ClInclude Include="XAudio.h" />
     <ClInclude Include="BasicFrame.h" />

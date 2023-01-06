@@ -13,9 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="ソース ファイル\Resource">
-      <UniqueIdentifier>{831a65b3-bab0-437b-b86e-3ff7637b9b49}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ヘッダー ファイル\Resource">
       <UniqueIdentifier>{d390da2b-0705-49ca-8832-1cbad99b2d2c}</UniqueIdentifier>
     </Filter>
@@ -63,6 +60,15 @@
     </Filter>
     <Filter Include="ヘッダー ファイル\Base\Scene">
       <UniqueIdentifier>{62497534-63cf-4816-9a60-57a59ceeb7b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\MakeGame\Scene">
+      <UniqueIdentifier>{7eff7f89-df8a-424b-b342-a6eb3f8fc860}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\MakeGame\Function">
+      <UniqueIdentifier>{20c0be6f-dd2d-4f2d-9160-e2168b2496d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Resource">
+      <UniqueIdentifier>{831a65b3-bab0-437b-b86e-3ff7637b9b49}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -150,6 +156,12 @@
     <ClCompile Include="ResourceLoad.cpp">
       <Filter>ソース ファイル\MakeGame</Filter>
     </ClCompile>
+    <ClCompile Include="Stage.cpp">
+      <Filter>ソース ファイル\MakeGame</Filter>
+    </ClCompile>
+    <ClCompile Include="Block2d.cpp">
+      <Filter>ソース ファイル\Object</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="BasicVS.hlsl" />
@@ -226,26 +238,14 @@
     <ClInclude Include="WorldCoordinate.h">
       <Filter>ヘッダー ファイル\Object\elem</Filter>
     </ClInclude>
-    <ClInclude Include="SceneManager.h">
-      <Filter>ヘッダー ファイル\MakeGame</Filter>
-    </ClInclude>
     <ClInclude Include="Util.h">
       <Filter>ヘッダー ファイル\MakeGame</Filter>
     </ClInclude>
     <ClInclude Include="ImGuiController.h">
       <Filter>ヘッダー ファイル\Base</Filter>
     </ClInclude>
-    <ClInclude Include="GameSystem.h">
-      <Filter>ヘッダー ファイル\MakeGame</Filter>
-    </ClInclude>
     <ClInclude Include="BasicFrame.h">
       <Filter>ヘッダー ファイル\Base</Filter>
-    </ClInclude>
-    <ClInclude Include="GameScene.h">
-      <Filter>ヘッダー ファイル\MakeGame</Filter>
-    </ClInclude>
-    <ClInclude Include="TitleScene.h">
-      <Filter>ヘッダー ファイル\MakeGame</Filter>
     </ClInclude>
     <ClInclude Include="Billborad.h">
       <Filter>ヘッダー ファイル\Object\2d</Filter>
@@ -259,8 +259,29 @@
     <ClInclude Include="BaseScene.h">
       <Filter>ヘッダー ファイル\Base\Scene</Filter>
     </ClInclude>
+    <ClInclude Include="GameScene.h">
+      <Filter>ヘッダー ファイル\MakeGame\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="TitleScene.h">
+      <Filter>ヘッダー ファイル\MakeGame\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="GameSystem.h">
+      <Filter>ヘッダー ファイル\MakeGame\Function</Filter>
+    </ClInclude>
     <ClInclude Include="ResourceLoad.h">
-      <Filter>ヘッダー ファイル\MakeGame</Filter>
+      <Filter>ヘッダー ファイル\MakeGame\Function</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneManager.h">
+      <Filter>ヘッダー ファイル\MakeGame\Function</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage.h">
+      <Filter>ヘッダー ファイル\MakeGame\Function</Filter>
+    </ClInclude>
+    <ClInclude Include="AbstractBlock.h">
+      <Filter>ヘッダー ファイル\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Block2d.h">
+      <Filter>ヘッダー ファイル\Object</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

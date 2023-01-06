@@ -12,6 +12,9 @@ void ResourceLoad::Initialize(SceneManager* pSceneManager)
     // テクスチャ読み込み
     Texture::Load("Resources/Image/Title/Wii - Super Paper Mario - Wii Menu Banner & Save Data Graphics.png", "title_atlas");
     Texture::Load("Resources/Image/Title/frame.png", "titleFrame");
+    Texture::Load("Resources/Image/Chapter1/Wii - Super Paper Mario - The Adventure Unfolds.png", "chapter1_atlas");
+    Texture::Load("Resources/Image/Chapter1/grass.png", "chapter1_grass");
+    Texture::Load("Resources/Image/Chapter1/dirt.png", "chapter1_dirt");
     Texture::Load("Resources/mario.jpg");
     Texture::Load("Resources/thinking.png");
 

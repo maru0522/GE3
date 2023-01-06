@@ -234,6 +234,7 @@
     <ClInclude Include="AssimpLoader.h" />
     <ClInclude Include="BaseScene.h" />
     <ClInclude Include="Billborad.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="SceneFactory.h" />
     <ClInclude Include="TitleScene.h" />
     <ClInclude Include="XAudio.h" />
@@ -257,6 +258,9 @@
     <ClInclude Include="Util.h" />
     <ClInclude Include="Window.h" />
     <ClInclude Include="WorldCoordinate.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Engine.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

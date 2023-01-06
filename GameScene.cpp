@@ -30,6 +30,11 @@ void GameScene::Update(void)
         cameraT_->eye_.x += 5;
     }
 
+    if (KEYS::IsTrigger(DIK_SPACE)) {
+        cameraT_->SwitchProjection();
+    }
+
+
     if (KEYS::IsDown(DIK_LEFTARROW)) {
         objT_->worldCoordinate_.position_.x -= 2;
     }

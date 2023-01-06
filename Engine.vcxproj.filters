@@ -64,6 +64,12 @@
     <Filter Include="ヘッダー ファイル\Base\Scene">
       <UniqueIdentifier>{62497534-63cf-4816-9a60-57a59ceeb7b1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ヘッダー ファイル\MakeGame\Scene">
+      <UniqueIdentifier>{2e2b1495-a31a-45b8-9240-848b7a5bc1b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\MakeGame\Scene">
+      <UniqueIdentifier>{cc1823a1-ab70-4eeb-bd77-d6120c4a841b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -129,12 +135,6 @@
     <ClCompile Include="BasicFrame.cpp">
       <Filter>ソース ファイル\Base</Filter>
     </ClCompile>
-    <ClCompile Include="GameScene.cpp">
-      <Filter>ソース ファイル\MakeGame</Filter>
-    </ClCompile>
-    <ClCompile Include="TitleScene.cpp">
-      <Filter>ソース ファイル\MakeGame</Filter>
-    </ClCompile>
     <ClCompile Include="Billborad.cpp">
       <Filter>ソース ファイル\Object\2d</Filter>
     </ClCompile>
@@ -146,6 +146,12 @@
     </ClCompile>
     <ClCompile Include="SceneFactory.cpp">
       <Filter>ソース ファイル\Base\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="GameScene.cpp">
+      <Filter>ソース ファイル\MakeGame\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="TitleScene.cpp">
+      <Filter>ソース ファイル\MakeGame\Scene</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -238,12 +244,6 @@
     <ClInclude Include="BasicFrame.h">
       <Filter>ヘッダー ファイル\Base</Filter>
     </ClInclude>
-    <ClInclude Include="GameScene.h">
-      <Filter>ヘッダー ファイル\MakeGame</Filter>
-    </ClInclude>
-    <ClInclude Include="TitleScene.h">
-      <Filter>ヘッダー ファイル\MakeGame</Filter>
-    </ClInclude>
     <ClInclude Include="Billborad.h">
       <Filter>ヘッダー ファイル\Object\2d</Filter>
     </ClInclude>
@@ -256,5 +256,19 @@
     <ClInclude Include="BaseScene.h">
       <Filter>ヘッダー ファイル\Base\Scene</Filter>
     </ClInclude>
+    <ClInclude Include="GameScene.h">
+      <Filter>ヘッダー ファイル\MakeGame\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="TitleScene.h">
+      <Filter>ヘッダー ファイル\MakeGame\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Engine.rc">
+      <Filter>リソース ファイル</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>

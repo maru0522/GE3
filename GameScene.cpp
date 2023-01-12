@@ -124,22 +124,22 @@ void GameScene::Update(void)
 {
     perspectiveCamera_->Update();
 #ifdef _DEBUG
-    if (KEYS::IsDown(DIK_W)) {
-        perspectiveCamera_->eye_.z += cameraSpeed_;
-        perspectiveCamera_->target_.z += cameraSpeed_;
-    }
-    if (KEYS::IsDown(DIK_S)) {
-        perspectiveCamera_->eye_.z -= cameraSpeed_;
-        perspectiveCamera_->target_.z -= cameraSpeed_;
-    }
-    if (KEYS::IsDown(DIK_UPARROW)) {
-        perspectiveCamera_->eye_.y += cameraSpeed_;
-        perspectiveCamera_->target_.y += cameraSpeed_;
-    }
-    if (KEYS::IsDown(DIK_DOWNARROW)) {
-        perspectiveCamera_->eye_.y -= cameraSpeed_;
-        perspectiveCamera_->target_.y -= cameraSpeed_;
-    }
+    //if (KEYS::IsDown(DIK_W)) {
+    //    perspectiveCamera_->eye_.z += cameraSpeed_;
+    //    perspectiveCamera_->target_.z += cameraSpeed_;
+    //}
+    //if (KEYS::IsDown(DIK_S)) {
+    //    perspectiveCamera_->eye_.z -= cameraSpeed_;
+    //    perspectiveCamera_->target_.z -= cameraSpeed_;
+    //}
+    //if (KEYS::IsDown(DIK_UPARROW)) {
+    //    perspectiveCamera_->eye_.y += cameraSpeed_;
+    //    perspectiveCamera_->target_.y += cameraSpeed_;
+    //}
+    //if (KEYS::IsDown(DIK_DOWNARROW)) {
+    //    perspectiveCamera_->eye_.y -= cameraSpeed_;
+    //    perspectiveCamera_->target_.y -= cameraSpeed_;
+    //}
     //if (KEYS::IsTrigger(DIK_SPACE)) {
     //    if (perspectiveCamera_->GetProjectionState()) {
     //        perspectiveCamera_->SetProjection(CameraProjection::ORTHOGRAPHIC);

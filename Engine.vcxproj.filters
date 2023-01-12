@@ -156,11 +156,11 @@
     <ClCompile Include="ResourceLoad.cpp">
       <Filter>ソース ファイル\MakeGame</Filter>
     </ClCompile>
-    <ClCompile Include="Stage.cpp">
-      <Filter>ソース ファイル\MakeGame</Filter>
-    </ClCompile>
-    <ClCompile Include="Block2d.cpp">
+    <ClCompile Include="Block.cpp">
       <Filter>ソース ファイル\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -274,14 +274,14 @@
     <ClInclude Include="SceneManager.h">
       <Filter>ヘッダー ファイル\MakeGame\Function</Filter>
     </ClInclude>
-    <ClInclude Include="Stage.h">
-      <Filter>ヘッダー ファイル\MakeGame\Function</Filter>
-    </ClInclude>
     <ClInclude Include="AbstractBlock.h">
       <Filter>ヘッダー ファイル\Object</Filter>
     </ClInclude>
-    <ClInclude Include="Block2d.h">
+    <ClInclude Include="Block.h">
       <Filter>ヘッダー ファイル\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>ヘッダー ファイル\Object\3d</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

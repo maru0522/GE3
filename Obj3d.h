@@ -3,6 +3,7 @@
 #include "WorldCoordinate.h"
 #include "Camera.h"
 #include "GraphicsPipeline.h"
+#include <memory>
 
 class Obj3d
 {

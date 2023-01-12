@@ -25,7 +25,7 @@ void TitleScene::Initialize(SceneManager* pSceneManager)
     // タイトル背景アイテム
     for (size_t i = 0; i < sprite_titleBackPieces_.size(); i++) {
         sprite_titleBackPieces_.at(i) = std::make_unique<Sprite>("title_atlas", CMode::ID);
-        sprite_titleBackPieces_.at(i)->SetSize({510,220});
+        sprite_titleBackPieces_.at(i)->SetSize({ 510,220 });
         sprite_titleBackPieces_.at(i)->SetCutStartPoint({ 143,296 });
         sprite_titleBackPieces_.at(i)->SetCutLength({ 255.9f,110 });
         sprite_titleBackPieces_.at(i)->SetPosition({ 507.0f * i - 158, 280 });
@@ -41,7 +41,7 @@ void TitleScene::Initialize(SceneManager* pSceneManager)
     }
 
     // タイトル木
-    sprite_titleTree_->SetSize({320,330});
+    sprite_titleTree_->SetSize({ 320,330 });
     sprite_titleTree_->SetCutStartPoint({ 408,243 });
     sprite_titleTree_->SetCutLength({ 126,163 });
     sprite_titleTree_->SetPosition({ 780,160 });
@@ -55,6 +55,11 @@ void TitleScene::Initialize(SceneManager* pSceneManager)
     // タイトルフレーム
     sprite_titleFrame_ = std::make_unique<Sprite>("titleFrame", CMode::ID);
 #pragma endregion
+
+#ifdef _DEBUG
+    //std::unique_ptr<BaseScene> nextScene{ sceneManager_->CreateScene("GAMEPLAY") };
+    //sceneManager_->RequestChangeScene(nextScene);
+#endif
 }
 
 void TitleScene::Update(void)
@@ -87,7 +92,7 @@ void TitleScene::Update(void)
     sprite_titleLogo_->Update();
     sprite_titleFrame_->Update();
 
-    if (KEYS::IsTrigger(DIK_RETURN)) {
+    if (KEYS::IsTrigger(DIK_SPACE)) {
         std::unique_ptr<BaseScene> nextScene{ sceneManager_->CreateScene("GAMEPLAY") };
         sceneManager_->RequestChangeScene(nextScene);
     }

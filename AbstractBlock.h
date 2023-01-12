@@ -2,20 +2,27 @@
 #include <memory>
 #include "Sprite.h"
 #include "Obj3d.h"
-#include "Camera.h"
 
 class AbstractBlock
 {
 public: // íËêî
     static constexpr uint32_t lengthX_{ 64 };
     static constexpr uint32_t lengthY_{ 64 };
+    static constexpr uint32_t lengthZ_{ 64 };
 
     // íËã`
     enum class Type
     {
         NONE,
         GRASS,
-        DIRT
+        GRASS_SURFACE,
+        DIRT,
+        BRICK,
+        QUESTION,
+        EMPTY,
+        PLASTIC,
+        PIPE,
+        GOAL,
     };
 
     // ä÷êî

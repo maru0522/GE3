@@ -1,4 +1,7 @@
 #include "Camera.h"
+namespace {
+    constexpr float __ZERO = 0.0f;
+}
 
 Camera::Camera(void)
 {
@@ -13,11 +16,13 @@ void Camera::SetProjection(CameraProjection projectionType)
 {
     if (projectionType == CameraProjection::ORTHOGRAPHIC) {
         // ïΩçsìäâe
-        matProjection_ = DirectX::XMMatrixOrthographicOffCenterLH(0.0f, Window::width_, Window::height_, 0.0f, 0.0f, 1.0f);
+        //nearZ_ = 1.0f;
+        matProjection_ = DirectX::XMMatrixOrthographicOffCenterLH(__ZERO, float{ Window::width_ }, __ZERO - 250.0f, float{ Window::height_ + 50.0f }, nearZ_, farZ_);
         projectionState_ = false; // ORTHOGRAPHIC
     }
     else {
         // ìßéãìäâe
+        //nearZ_ = 0.1f;
         matProjection_ = DirectX::XMMatrixPerspectiveFovLH(Util::Convert::DegToRad(45.0f), (float)Window::width_ / Window::height_, nearZ_, farZ_);
         projectionState_ = true; // PERSPECTIVE
     }

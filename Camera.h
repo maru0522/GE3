@@ -34,7 +34,7 @@ private: // 変数
 
     // 透視投影
     float_t nearZ_{ 0.1f }; // 前端
-    float_t farZ_{ 1000.0f }; // 奥端
+    float_t farZ_{ 500.0f }; // 奥端
     DirectX::XMMATRIX matProjection_{ DirectX::XMMatrixPerspectiveFovLH(Util::Convert::DegToRad(45.0f), (float)Window::width_ / Window::height_, nearZ_, farZ_) };
 
     // ビュー変換行列

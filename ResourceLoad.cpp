@@ -17,9 +17,20 @@ void ResourceLoad::Initialize(SceneManager* pSceneManager)
     Texture::Load("Resources/Image/Chapter1/dirt.png", "chapter1_dirt");
     Texture::Load("Resources/mario.jpg");
     Texture::Load("Resources/thinking.png");
+    Texture::Load("Resources/Image/Chapter1/BrickBlock.png", "chapter1_brick");
+    Texture::Load("Resources/Image/Chapter1/EmptyBlock.png", "chapter1_empty");
+    Texture::Load("Resources/Image/Chapter1/QuestionBlock.png", "chapter1_question");
+    Texture::Load("Resources/Image/Chapter1/grass_surface.png", "chapter1_grassSurface");
+    Texture::Load("Resources/Image/Chapter1/goal.png", "chapter1_goal");
+    Texture::Load("Resources/Image/Chapter1/sprite_goal.png", "chapter1_clear");
+    Texture::Load("Resources/Image/Chapter1/plastic.png", "chapter1_plastic");
+    Texture::Load("Resources/Image/Chapter1/mario.png", "main");
+    Texture::Load("Resources/Image/Chapter1/mario2.png", "main2");
+
 
     // 3d.objì«Ç›çûÇ›
     Model::Load("Resources/3dModels/cube/cube.obj");
+    Model::Load("Resources/3dModels/greenPipe/GreenPipe.obj");
 }
 
 void ResourceLoad::Update(void)

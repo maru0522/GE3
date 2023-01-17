@@ -20,5 +20,7 @@ private:
     unique_ptr<Camera> cameraT_{};
     unique_ptr<Sprite> spriteT_{};
     unique_ptr<Obj3d> objT_{};
+
+    std::array<std::unique_ptr<Obj3d>, 200> obj_;
 };
 

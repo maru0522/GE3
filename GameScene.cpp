@@ -11,6 +11,11 @@ void GameScene::Initialize(SceneManager* pSceneManager)
     cameraT_ = std::make_unique<Camera>();
     spriteT_ = std::make_unique<Sprite>("Resources/reimu.png", CMode::PATH);
     objT_ = std::make_unique<Obj3d>("Resources/3dModels/cube/cube.obj", cameraT_.get());
+
+    for (size_t i = 0; i < obj_.size(); i++) {
+        obj_[i] = std::make_unique<Obj3d>("Resources/3dModels/cube/cube.obj", cameraT_.get());
+        obj_[i]->worldCoordinate_.position_ = {i * 2.0f, 0.0f,0.0f};
+    }
 }
 
 void GameScene::Update(void)
@@ -44,11 +49,18 @@ void GameScene::Update(void)
 
     spriteT_->Update();
     objT_->Update();
+
+    for (size_t i = 0; i < obj_.size(); i++) {
+        obj_[i]->Update();
+    }
 }
 
 void GameScene::Draw3d(void)
 {
     objT_->Draw();
+    for (size_t i = 0; i < obj_.size(); i++) {
+        obj_[i]->Draw();
+    }
 }
 
 void GameScene::Draw2d(void)

@@ -5,9 +5,32 @@ SceneManager::~SceneManager(void)
     Finalize();
 }
 
-std::unique_ptr<BaseScene> SceneManager::CreateScene(const std::string& sceneName)
+std::unique_ptr<BaseScene> SceneManager::CreateScene(AbstractSceneFactory::Type type)
 {
-    return std::move(sceneFactory_->CreateScene(sceneName));
+    return std::move(sceneFactory_->CreateScene(type));
+}
+
+void SceneManager::RequestChangeScene(AbstractSceneFactory::Type type)
+{
+    switch (type)
+    {
+    case AbstractSceneFactory::Type::TITLE:
+        nextScene_ = CreateScene(type);
+        break;
+
+    case AbstractSceneFactory::Type::PLAYGAME:
+        nextScene_ = CreateScene(type);
+        break;
+
+    case AbstractSceneFactory::Type::END:
+        nextScene_ = CreateScene(type);
+        break;
+    }
+}
+
+void SceneManager::RequestChangeScene(std::unique_ptr<BaseScene>& scene)
+{
+    nextScene_ = std::move(scene);
 }
 
 void SceneManager::Update(void)

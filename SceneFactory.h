@@ -8,6 +8,6 @@ class SceneFactory :
     public AbstractSceneFactory
 {
 public:
-    std::unique_ptr<BaseScene> CreateScene(const std::string& sceneName) override;
+    std::unique_ptr<BaseScene> CreateScene(Type sceneType) override;
 };
 

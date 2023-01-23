@@ -153,6 +153,9 @@
     <ClCompile Include="TitleScene.cpp">
       <Filter>ソース ファイル\MakeGame\Scene</Filter>
     </ClCompile>
+    <ClCompile Include="ResourceLoad.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="BasicVS.hlsl" />
@@ -263,6 +266,9 @@
       <Filter>ヘッダー ファイル\MakeGame\Scene</Filter>
     </ClInclude>
     <ClInclude Include="resource.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceLoad.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
   </ItemGroup>

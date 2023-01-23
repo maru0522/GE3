@@ -154,6 +154,7 @@
     <ClCompile Include="AssimpLoader.cpp" />
     <ClCompile Include="BaseScene.cpp" />
     <ClCompile Include="Billborad.cpp" />
+    <ClCompile Include="ResourceLoad.cpp" />
     <ClCompile Include="SceneFactory.cpp" />
     <ClCompile Include="TitleScene.cpp" />
     <ClCompile Include="XAudio.cpp" />
@@ -236,6 +237,7 @@
     <ClInclude Include="BaseScene.h" />
     <ClInclude Include="Billborad.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="ResourceLoad.h" />
     <ClInclude Include="SceneFactory.h" />
     <ClInclude Include="TitleScene.h" />
     <ClInclude Include="XAudio.h" />

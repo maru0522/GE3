@@ -1,8 +1,7 @@
 #include "GameSystem.h"
 #include "Obj3d.h"
 #include "Sprite.h"
-#include "GameScene.h"
-#include "TitleScene.h"
+#include "ResourceLoad.h"
 
 GameSystem::GameSystem(void)
 {
@@ -12,7 +11,7 @@ void GameSystem::Initialize(void)
 {
     BasicFrame::Initialize();
 
-    scene_ = std::make_unique<TitleScene>();
+    scene_ = std::make_unique<ResourceLoad>();
     sceneManager_->RequestChangeScene(scene_);
 }
 

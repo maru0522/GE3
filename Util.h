@@ -3,11 +3,24 @@
 #include <chrono>
 
 namespace Util {
-    namespace Convert {
-        constexpr float MY_PI{ 3.14159265f };
+    constexpr float M_PI{ 3.14159265f };
 
-        inline constexpr float ToRadian(float fDegrees) { return fDegrees * MY_PI / 180.0f; }
-        inline constexpr float ToDegree(float fRadians) { return fRadians * 180.0f / MY_PI; }
+    template<typename T>
+    const T& Clamp(const T& value, const T& min, const T& max) {
+        if (value < min) {
+            return min;
+        }
+        else if (value > max) {
+            return max;
+        }
+        else {
+            return value;
+        }
+    }
+
+    namespace Convert {
+        inline constexpr float DegToRad(float fDegrees) { return fDegrees * M_PI / 180.0f; }
+        inline constexpr float RadToDeg(float fRadians) { return fRadians * 180.0f / M_PI; }
     }
 
     class Timer {
@@ -44,7 +57,23 @@ namespace Util {
         bool isEnd_{ false }; // endTime_ < elapsedTime_ = true
     };
 
+    namespace Ease {
+        float EaseInSine(float t);
+        float EaseInSine(float start, float end, float t);
+        float EaseInCubic(float t);
+        float EaseInCubic(float start, float end, float t);
+        float EaseInQuint(float t);
+        float EaseInQuint(float start, float end, float t);
+        float EaseInCirc(float t);
+        float EaseInCirc(float start, float end, float t);
+        float EaseInElastic(float t);
+        float EaseInElastic(float start, float end, float t);
+
+        float EaseInOutSine(float t);
+        float EaseInOutSine(float start, float end, float t);
+    }
+
     namespace expt {
-        
+
     }
 }

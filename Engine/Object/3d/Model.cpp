@@ -27,7 +27,7 @@ void Model::Load(const fsPath& pathAndObjName)
 #ifdef _DEBUG
     // 既に読み込んだテクスチャとの重複確認。
     if (models_.count(pathAndObjName)) {
-        OutputDebugString(L"A .obj file with the same name was loaded. The model may have been overwritten.");
+        //OutputDebugString(L"Model WARNING: A .obj file with the same name was loaded. The model may have been overwritten.\n");
     }
 #endif // _DEBUG
 

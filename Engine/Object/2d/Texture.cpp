@@ -43,7 +43,7 @@ void Texture::Load(const fsPath& pathAndFileName)
     // 既に読み込んだテクスチャとの重複確認。
     if (textures_.count(tmp.name_)) {
         // 重複があった場合は読み込みはしない。
-        OutputDebugString(L"WARNING: An image with the same name was loaded.");
+        //OutputDebugString(L"Texture WARNING: An image with the same name was loaded.\n");
         return;
     }
     else {

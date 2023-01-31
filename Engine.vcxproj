@@ -78,13 +78,17 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(ProjectDir)Assimp/include;$(SolutionDir)ImGui;$(SolutionDir)DirectXTex;$(IncludePath)</IncludePath>
-    <LibraryPath>$(ProjectDir)Assimp/Lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)External\DirectXTex;$(SolutionDir)External\ImGui</IncludePath>
+    <LibraryPath>$(LibraryPath)</LibraryPath>
+    <OutDir>$(SolutionDir)..\Generated\Outputs\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)..\Generated\Obj\$(ProjectName)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>$(SolutionDir)ImGui;$(ProjectDir)Assimp/include;$(SolutionDir)DirectXTex;$(IncludePath)</IncludePath>
-    <LibraryPath>$(ProjectDir)Assimp/Lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)External\DirectXTex;$(SolutionDir)External\ImGui</IncludePath>
+    <LibraryPath>$(LibraryPath)</LibraryPath>
+    <OutDir>$(SolutionDir)..\Generated\Outputs\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)..\Generated\Obj\$(ProjectName)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -123,11 +127,12 @@
       <TreatWarningAsError>false</TreatWarningAsError>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <AdditionalIncludeDirectories>$(ProjectDir)Engine\Audio;$(ProjectDir)Engine\Base;$(ProjectDir)Engine\Input;$(ProjectDir)Engine\Object\2d;$(ProjectDir)Engine\Object\3d;$(ProjectDir)Engine\Object\Elem;$(ProjectDir)Engine\Scene;$(ProjectDir)Engine\Util;$(ProjectDir)Application\Base;$(ProjectDir)Application\Scene;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>Debug/assimp-vc143-mtd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -140,44 +145,44 @@
       <ConformanceMode>true</ConformanceMode>
       <TreatWarningAsError>false</TreatWarningAsError>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalIncludeDirectories>$(ProjectDir)Engine\Audio;$(ProjectDir)Engine\Base;$(ProjectDir)Engine\Input;$(ProjectDir)Engine\Object\2d;$(ProjectDir)Engine\Object\3d;$(ProjectDir)Engine\Object\Elem;$(ProjectDir)Engine\Scene;$(ProjectDir)Engine\Util;$(ProjectDir)Application\Base;$(ProjectDir)Application\Scene;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>Release/assimp-vc143-mt.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="AbstractSceneFactory.cpp" />
-    <ClCompile Include="AssimpLoader.cpp" />
-    <ClCompile Include="BaseScene.cpp" />
-    <ClCompile Include="Billborad.cpp" />
-    <ClCompile Include="ResourceLoad.cpp" />
-    <ClCompile Include="SceneFactory.cpp" />
-    <ClCompile Include="TitleScene.cpp" />
-    <ClCompile Include="XAudio.cpp" />
-    <ClCompile Include="BasicFrame.cpp" />
-    <ClCompile Include="Camera.cpp" />
-    <ClCompile Include="GameScene.cpp" />
-    <ClCompile Include="GameSystem.cpp" />
-    <ClCompile Include="GraphicsPipeline.cpp" />
-    <ClCompile Include="ImGuiController.cpp" />
-    <ClCompile Include="Input.cpp" />
+    <ClCompile Include="Engine\Scene\AbstractSceneFactory.cpp" />
+    <ClCompile Include="Engine\Object\2d\Billborad.cpp" />
+    <ClCompile Include="Application\Base\ResourceLoad.cpp" />
+    <ClCompile Include="Engine\Scene\BaseScene.cpp" />
+    <ClCompile Include="Engine\Scene\SceneFactory.cpp" />
+    <ClCompile Include="Application\Scene\TitleScene.cpp" />
+    <ClCompile Include="Engine\Audio\XAudio.cpp" />
+    <ClCompile Include="Engine\Base\BasicFrame.cpp" />
+    <ClCompile Include="Engine\Object\3d\Camera.cpp" />
+    <ClCompile Include="Application\Scene\GameScene.cpp" />
+    <ClCompile Include="Engine\Base\GameSystem.cpp" />
+    <ClCompile Include="Engine\Object\Elem\GraphicsPipeline.cpp" />
+    <ClCompile Include="Engine\Base\ImGuiController.cpp" />
+    <ClCompile Include="Engine\Input\Input.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="CtrlFPS.cpp" />
-    <ClCompile Include="InitDirectX.cpp" />
-    <ClCompile Include="Cube.cpp" />
-    <ClCompile Include="Model.cpp" />
-    <ClCompile Include="Obj3d.cpp" />
-    <ClCompile Include="SceneManager.cpp" />
-    <ClCompile Include="SharedStruct.cpp" />
-    <ClCompile Include="Sprite.cpp" />
-    <ClCompile Include="Texture.cpp" />
-    <ClCompile Include="Util.cpp" />
-    <ClCompile Include="Window.cpp" />
-    <ClCompile Include="WorldCoordinate.cpp" />
+    <ClCompile Include="Engine\Base\CtrlFPS.cpp" />
+    <ClCompile Include="Engine\Base\InitDirectX.cpp" />
+    <ClCompile Include="Engine\Object\3d\Cube.cpp" />
+    <ClCompile Include="Engine\Object\3d\Model.cpp" />
+    <ClCompile Include="Engine\Object\3d\Obj3d.cpp" />
+    <ClCompile Include="Engine\Base\SceneManager.cpp" />
+    <ClCompile Include="Engine\Object\Elem\SharedStruct.cpp" />
+    <ClCompile Include="Engine\Object\2d\Sprite.cpp" />
+    <ClCompile Include="Engine\Object\2d\Texture.cpp" />
+    <ClCompile Include="Engine\Util\Util.cpp" />
+    <ClCompile Include="Engine\Base\Window.cpp" />
+    <ClCompile Include="Engine\Object\Elem\WorldCoordinate.cpp" />
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="BasicPS.hlsl">
@@ -224,46 +229,45 @@
     <None Include="Resources\Shaders\Sprite.hlsli" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="DirectXTex\DirectXTex_Desktop_2022_Win10.vcxproj">
-      <Project>{371b9fa9-4c90-4ac6-a123-aced756d6c77}</Project>
-    </ProjectReference>
-    <ProjectReference Include="ImGui\ImGui.vcxproj">
-      <Project>{55e22195-5b1c-43a8-8c9b-8e6c3aa3d45c}</Project>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="AbstractSceneFactory.h" />
-    <ClInclude Include="AssimpLoader.h" />
-    <ClInclude Include="BaseScene.h" />
-    <ClInclude Include="Billborad.h" />
+    <ClInclude Include="Application\Scene\TitleScene.h" />
+    <ClInclude Include="Engine\Scene\AbstractSceneFactory.h" />
+    <ClInclude Include="Engine\Object\2d\Billborad.h" />
+    <ClInclude Include="Engine\Scene\BaseScene.h" />
     <ClInclude Include="resource.h" />
-    <ClInclude Include="ResourceLoad.h" />
-    <ClInclude Include="SceneFactory.h" />
-    <ClInclude Include="TitleScene.h" />
-    <ClInclude Include="XAudio.h" />
-    <ClInclude Include="BasicFrame.h" />
-    <ClInclude Include="Camera.h" />
-    <ClInclude Include="ConstBuffer.h" />
-    <ClInclude Include="CtrlFPS.h" />
-    <ClInclude Include="GameScene.h" />
-    <ClInclude Include="GameSystem.h" />
-    <ClInclude Include="GraphicsPipeline.h" />
-    <ClInclude Include="ImGuiController.h" />
-    <ClInclude Include="InitDirectX.h" />
-    <ClInclude Include="Input.h" />
-    <ClInclude Include="Cube.h" />
-    <ClInclude Include="Model.h" />
-    <ClInclude Include="Obj3d.h" />
-    <ClInclude Include="SceneManager.h" />
-    <ClInclude Include="SharedStruct.h" />
-    <ClInclude Include="Sprite.h" />
-    <ClInclude Include="Texture.h" />
-    <ClInclude Include="Util.h" />
-    <ClInclude Include="Window.h" />
-    <ClInclude Include="WorldCoordinate.h" />
+    <ClInclude Include="Application\Base\ResourceLoad.h" />
+    <ClInclude Include="Engine\Scene\SceneFactory.h" />
+    <ClInclude Include="Engine\Audio\XAudio.h" />
+    <ClInclude Include="Engine\Base\BasicFrame.h" />
+    <ClInclude Include="Engine\Object\3d\Camera.h" />
+    <ClInclude Include="Engine\Object\Elem\ConstBuffer.h" />
+    <ClInclude Include="Engine\Base\CtrlFPS.h" />
+    <ClInclude Include="Application\Scene\GameScene.h" />
+    <ClInclude Include="Engine\Base\GameSystem.h" />
+    <ClInclude Include="Engine\Object\Elem\GraphicsPipeline.h" />
+    <ClInclude Include="Engine\Base\ImGuiController.h" />
+    <ClInclude Include="Engine\Base\InitDirectX.h" />
+    <ClInclude Include="Engine\Input\Input.h" />
+    <ClInclude Include="Engine\Object\3d\Cube.h" />
+    <ClInclude Include="Engine\Object\3d\Model.h" />
+    <ClInclude Include="Engine\Object\3d\Obj3d.h" />
+    <ClInclude Include="Engine\Base\SceneManager.h" />
+    <ClInclude Include="Engine\Object\Elem\SharedStruct.h" />
+    <ClInclude Include="Engine\Object\2d\Sprite.h" />
+    <ClInclude Include="Engine\Object\2d\Texture.h" />
+    <ClInclude Include="Engine\Util\Util.h" />
+    <ClInclude Include="Engine\Base\Window.h" />
+    <ClInclude Include="Engine\Object\Elem\WorldCoordinate.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Engine.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="External\DirectXTex\DirectXTex_Desktop_2022_Win10.vcxproj">
+      <Project>{371b9fa9-4c90-4ac6-a123-aced756d6c77}</Project>
+    </ProjectReference>
+    <ProjectReference Include="External\ImGui\ImGui.vcxproj">
+      <Project>{55e22195-5b1c-43a8-8c9b-8e6c3aa3d45c}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -22,8 +22,6 @@ void TitleScene::Initialize(SceneManager* pSceneManager)
     spriteT_ = std::make_unique<Sprite>("Resources/reimu.png", CMode::PATH);
     objT_ = std::make_unique<Obj3d>("Resources/3dModels/cube/cube.obj", cameraT_.get());
     objT_->SetTexture("Resources/thinking.png");
-
-    sceneManager_->RequestChangeScene(SceneFactory::Type::PLAYGAME);
 }
 
 void TitleScene::Update(void)

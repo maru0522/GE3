@@ -28,6 +28,8 @@ public: // ä÷êî
     void SetParent(WorldCoordinate* parent) { parent_ = parent; }
 
     void SetCamera(Camera* pCamera) { pCamera_ = pCamera; }
+
+    void SetColor(const DirectX::XMFLOAT4& color) { color_ = color; }
 #pragma endregion
 
 #pragma region getter
@@ -38,6 +40,8 @@ public: // ïœêî
     DirectX::XMFLOAT3 scale_{ 1.0f, 1.0f, 1.0f };
     DirectX::XMFLOAT3 rotation_{ 0.0f, 0.0f, 0.0f };
     DirectX::XMFLOAT3 position_{ 0.0f, 0.0f, 0.0f };
+
+    DirectX::XMFLOAT4 color_{ 1,1,1,1 };
 
 private: // ä÷êî
     void TransferMatrix(void);

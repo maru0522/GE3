@@ -66,7 +66,7 @@
       <TreatWarningAsError>false</TreatWarningAsError>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
-      <AdditionalIncludeDirectories>$(ProjectDir)Engine\Audio;$(ProjectDir)Engine\Base;$(ProjectDir)Engine\Input;$(ProjectDir)Engine\Object\2d;$(ProjectDir)Engine\Object\3d;$(ProjectDir)Engine\Object\Elem;$(ProjectDir)Engine\Scene;$(ProjectDir)Engine\Util;$(ProjectDir)Application\Base;$(ProjectDir)Application\Scene;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)Engine\Audio;$(ProjectDir)Engine\Base;$(ProjectDir)Engine\Input;$(ProjectDir)Engine\Object\2d;$(ProjectDir)Engine\Object\3d;$(ProjectDir)Engine\Object\Elem;$(ProjectDir)Engine\Scene;$(ProjectDir)Engine\Util;$(ProjectDir)Application\Base;$(ProjectDir)Application\Scene;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -84,7 +84,7 @@
       <ConformanceMode>true</ConformanceMode>
       <TreatWarningAsError>false</TreatWarningAsError>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-      <AdditionalIncludeDirectories>$(ProjectDir)Engine\Audio;$(ProjectDir)Engine\Base;$(ProjectDir)Engine\Input;$(ProjectDir)Engine\Object\2d;$(ProjectDir)Engine\Object\3d;$(ProjectDir)Engine\Object\Elem;$(ProjectDir)Engine\Scene;$(ProjectDir)Engine\Util;$(ProjectDir)Application\Base;$(ProjectDir)Application\Scene;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)Engine\Audio;$(ProjectDir)Engine\Base;$(ProjectDir)Engine\Input;$(ProjectDir)Engine\Object\2d;$(ProjectDir)Engine\Object\3d;$(ProjectDir)Engine\Object\Elem;$(ProjectDir)Engine\Scene;$(ProjectDir)Engine\Util;$(ProjectDir)Application\Base;$(ProjectDir)Application\Scene;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -95,6 +95,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Collision.cpp" />
     <ClCompile Include="Engine\Scene\AbstractSceneFactory.cpp" />
     <ClCompile Include="Engine\Object\2d\Billborad.cpp" />
     <ClCompile Include="Application\Base\ResourceLoad.cpp" />
@@ -122,6 +123,7 @@
     <ClCompile Include="Engine\Util\Util.cpp" />
     <ClCompile Include="Engine\Base\Window.cpp" />
     <ClCompile Include="Engine\Object\Elem\WorldCoordinate.cpp" />
+    <ClCompile Include="CollisionPrimitive.cpp" />
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="BasicPS.hlsl">
@@ -161,6 +163,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application\Scene\TitleScene.h" />
+    <ClInclude Include="Collision.h" />
+    <ClInclude Include="CollisionPrimitive.h" />
     <ClInclude Include="Engine\Scene\AbstractSceneFactory.h" />
     <ClInclude Include="Engine\Object\2d\Billborad.h" />
     <ClInclude Include="Engine\Scene\BaseScene.h" />

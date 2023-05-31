@@ -14,5 +14,5 @@ float4 main(VSOutput input) : SV_TARGET
     shade_color = m_ambient;                                        // ambient
     shade_color += m_diffuse * light_diffuse;                       // diffuse
 	float4 texcolor = float4(tex.Sample(smp,input.uv_));
-    return float4(texcolor.rgb * shade_color, texcolor.a * m_alpha);
+    return float4(texcolor.rgb * shade_color, texcolor.a * m_alpha) * color_;
 }

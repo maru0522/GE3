@@ -61,4 +61,5 @@ void WorldCoordinate::TransferMatrix(void)
     }
 
     cbData_.GetConstBuffMap()->mat_ = matWorld_ * matView * matProjection;
+    cbData_.GetConstBuffMap()->color_ = color_;
 }

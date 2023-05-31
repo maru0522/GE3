@@ -15,11 +15,14 @@ void ResourceLoad::Initialize(SceneManager* pSceneManager)
     BaseScene::Initialize(pSceneManager);
 
     // テクスチャ読み込み
+    Texture::Load("Resources/reimu.png", "reimuSprite");
     Texture::Load("Resources/mario.jpg");
     Texture::Load("Resources/thinking.png");
+    Texture::Load("Resources/a.png");
 
     // 3d.obj読み込み
     Model::Load("Resources/3dModels/cube/cube.obj");
+    Model::Load("Resources/3dModels/sphere/sphere.obj");
 }
 
 void ResourceLoad::Update(void)

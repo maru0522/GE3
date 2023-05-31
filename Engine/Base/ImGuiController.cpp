@@ -13,12 +13,11 @@ ImGuiController::ImGuiController(void)
 
 ImGuiController::~ImGuiController(void)
 {
-
+    Finalize();
 }
 
 void ImGuiController::Update(void)
 {
-    Begin();
     //ImGui::Text("Hello, world %d", 123);
     //char buf[20]{};
     //ImGui::InputText("string", buf, IM_ARRAYSIZE(buf));
@@ -65,8 +64,6 @@ void ImGuiController::Update(void)
     //ImGui::End();
 
     //ImGui::ShowDemoWindow();
-
-    End();
 }
 
 void ImGuiController::Begin(void)

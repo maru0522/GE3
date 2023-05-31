@@ -2,70 +2,88 @@
 #include "Texture.h"
 #include "Model.h"
 #include "Input.h"
+#include <imgui.h>
+#include "Collision.h"
 
 void GameScene::Initialize(SceneManager* pSceneManager)
 {
     BaseScene::Initialize(pSceneManager);
 
-    // 変数初期化
-    cameraT_ = std::make_unique<Camera>();
-    spriteT_ = std::make_unique<Sprite>("Resources/reimu.png", CMode::PATH);
-    objT_ = std::make_unique<Obj3d>("Resources/3dModels/cube/cube.obj", cameraT_.get());
+    // 球の初期値を設定
+    sphere_.center_ = DirectX::XMVectorSet(0, 2, 0, 1); // 中心点座標
+    sphere_.radius_ = 1.f;
 
-    for (size_t i = 0; i < obj_.size(); i++) {
-        obj_[i] = std::make_unique<Obj3d>("Resources/3dModels/cube/cube.obj", cameraT_.get());
-        obj_[i]->worldCoordinate_.position_ = {i * 2.0f, 0.0f,0.0f};
-    }
+    // 平面の初期値を設定
+    plane_.normal_ = DirectX::XMVectorSet(0, 1, 0, 0); // 法線ベクトル
+    plane_.distance_ = 0.f; // 原点(0,0,0)からの距離
+
+    camera_->eye_ = { 0,0,-20 };
+
+    planeObj_->worldCoordinate_.scale_ = { 10,0.01f,3 };
+    planeObj_->worldCoordinate_.position_ = { 0.f,0.f,0.f };
+
+    sphereObj_->worldCoordinate_.position_ = { sphere_.center_.m128_f32[0],sphere_.center_.m128_f32[1],sphere_.center_.m128_f32[2] };
 }
 
 void GameScene::Update(void)
 {
-    cameraT_->Update();
+    // 球移動
+    {
+        //DirectX::XMVECTOR moveY{ DirectX::XMVectorSet(0.f,0.01f,0.f,0.f) };
+        //if (KEYS::IsDown(DIK_NUMPAD8))
+        //{
+        //    sphere_.center_.m128_f32[0] += moveY.m128_f32[0];
+        //    sphere_.center_.m128_f32[1] += moveY.m128_f32[1];
+        //    sphere_.center_.m128_f32[2] += moveY.m128_f32[2];
+        //    sphere_.center_.m128_f32[3] += moveY.m128_f32[3];
+        //}
+        //else if (KEYS::IsDown(DIK_NUMPAD2))
+        //{
+        //    sphere_.center_.m128_f32[0] -= moveY.m128_f32[0];
+        //    sphere_.center_.m128_f32[1] -= moveY.m128_f32[1];
+        //    sphere_.center_.m128_f32[2] -= moveY.m128_f32[2];
+        //    sphere_.center_.m128_f32[3] -= moveY.m128_f32[3];
+        //}
+    }
+    sphere_.center_.m128_f32[1] = std::sinf(Util::Convert::ToRadian(degree_)) * 2.f;
 
-    if (KEYS::IsDown(DIK_W)) {
-        cameraT_->eye_.z += 5;
+    ImGui::Begin("TitleScene");
+    ImGui::Text("sphere : %f,%f,%f", sphere_.center_.m128_f32[0], sphere_.center_.m128_f32[1], sphere_.center_.m128_f32[2]);
+
+    bool hit{ Collision::CheckSphere2Plane(sphere_,plane_) };
+    ImGui::Text("Hit : %d", hit);
+    ImGui::End();
+
+    camera_->Update();
+
+    sphereObj_->worldCoordinate_.position_ = { sphere_.center_.m128_f32[0],sphere_.center_.m128_f32[1],sphere_.center_.m128_f32[2] };
+
+    if (hit) {
+        sphereObj_->SetColor({ 1,0,0,1 });
     }
-    if (KEYS::IsDown(DIK_S)) {
-        cameraT_->eye_.z -= 5;
-    }
-    if (KEYS::IsDown(DIK_A)) {
-        cameraT_->eye_.x -= 5;
-    }
-    if (KEYS::IsDown(DIK_D)) {
-        cameraT_->eye_.x += 5;
+    else {
+        sphereObj_->SetColor({ 1,1,1,1 });
     }
 
-    if (KEYS::IsTrigger(DIK_SPACE)) {
-        cameraT_->SwitchProjection();
-    }
+    sphereObj_->Update();
+    planeObj_->Update();
 
+    //if (KEYS::IsTrigger(DIK_RETURN)) {
+    //    sceneManager_->RequestChangeScene(SceneFactory::Type::PLAYGAME);
+    //}
 
-    if (KEYS::IsDown(DIK_LEFTARROW)) {
-        objT_->worldCoordinate_.position_.x -= 2;
-    }
-    if (KEYS::IsDown(DIK_RIGHTARROW)) {
-        objT_->worldCoordinate_.position_.x += 2;
-    }
-
-    spriteT_->Update();
-    objT_->Update();
-
-    for (size_t i = 0; i < obj_.size(); i++) {
-        obj_[i]->Update();
-    }
+    if (degree_ < 360) degree_++;
+    else degree_ = 1;
 }
 
 void GameScene::Draw3d(void)
 {
-    objT_->Draw();
-    for (size_t i = 0; i < obj_.size(); i++) {
-        obj_[i]->Draw();
-    }
+    sphereObj_->Draw();
+    planeObj_->Draw();
 }
 
 void GameScene::Draw2d(void)
 {
-    spriteT_->Draw();
 }
 
 void GameScene::Finalize(void)

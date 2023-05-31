@@ -43,7 +43,7 @@ void Texture::Load(const fsPath& pathAndFileName)
     // 既に読み込んだテクスチャとの重複確認。
     if (textures_.count(tmp.name_)) {
         // 重複があった場合は読み込みはしない。
-        //OutputDebugString(L"Texture WARNING: An image with the same name was loaded.\n");
+        OutputDebugString(L"Texture WARNING: An image with the same name was loaded.\n");
         return;
     }
     else {
@@ -392,7 +392,8 @@ void Texture::GenerateMissingTexture(void)
 
 const Texture::TEXTURE_VALUE* Texture::GetTextureInfo(const fsPath& pathAndFileName)
 {
-    return &textures_.at(pathAndFileName);
+    if (textures_.count(pathAndFileName) == 0) return &textures_.at("ERROR_IMAGE");
+    else return &textures_.at(pathAndFileName);
 }
 
 const Texture::TEXTURE_VALUE* Texture::GetTextureInfoById(const std::string& id)

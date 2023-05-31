@@ -1,7 +1,7 @@
 cbuffer CBData : register(b0)
 {
 	matrix mat_;	// 3D•ÏŠ·s—ñ
-    //float4 color_; // F(RGBA)
+    float4 color_; // F(RGBA)
 };
 
 cbuffer cbuff1 : register(b1)

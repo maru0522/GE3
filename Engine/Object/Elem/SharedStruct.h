@@ -9,7 +9,7 @@
 
 struct CBDataB0 {
     DirectX::XMMATRIX mat_;     // 3D変換行列
-    //DirectX::XMFLOAT4 color_;   // 色（RGBA）
+    DirectX::XMFLOAT4 color_;   // 色（RGBA）
 };
 
 struct CBDataB1 {

@@ -23,6 +23,7 @@ public: // 関数
     void Draw(void);
 
     void SetCamera(Camera* pCamera) { worldCoordinate_.SetCamera(pCamera); }
+    void SetColor(const DirectX::XMFLOAT4& color) { worldCoordinate_.SetColor(color); }
 
     // Texture::Load("パス")で読み込んだ"パス"を書き込む
     void SetTexture(const fsPath& pathAndFileName);

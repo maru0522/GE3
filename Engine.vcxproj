@@ -154,6 +154,7 @@
     <ClCompile Include="BaseScene.cpp" />
     <ClCompile Include="Billborad.cpp" />
     <ClCompile Include="Block.cpp" />
+    <ClCompile Include="LevelData.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="ResourceLoad.cpp" />
     <ClCompile Include="SceneFactory.cpp" />
@@ -239,6 +240,8 @@
     <ClInclude Include="Billborad.h" />
     <ClInclude Include="AbstractBlock.h" />
     <ClInclude Include="Block.h" />
+    <ClInclude Include="json.hpp" />
+    <ClInclude Include="LevelData.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="ResourceLoad.h" />
     <ClInclude Include="SceneFactory.h" />

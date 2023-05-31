@@ -162,6 +162,9 @@
     <ClCompile Include="Player.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="LevelData.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="BasicVS.hlsl" />
@@ -282,6 +285,12 @@
     </ClInclude>
     <ClInclude Include="Player.h">
       <Filter>ヘッダー ファイル\Object\3d</Filter>
+    </ClInclude>
+    <ClInclude Include="LevelData.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="json.hpp">
+      <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

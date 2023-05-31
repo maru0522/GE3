@@ -4,6 +4,7 @@
 #include "Sprite.h"
 #include "Obj3d.h"
 #include "BaseScene.h"
+#include "LevelData.h"
 
 using std::unique_ptr;
 
@@ -17,12 +18,17 @@ public: // ŠÖ”
     void Finalize(void) override;
 
 private:
+    void DeployObj(LevelData* lvdptr);
+
     unique_ptr<Camera> cameraT_{};
-    std::array<unique_ptr<Sprite>, 6> sprite_titleBackGrounds_{}; // ”wŒiŠG
-    std::array<unique_ptr<Sprite>, 6> sprite_titleBackPieces_{}; // ”wŒiƒAƒCƒeƒ€
-    std::array<unique_ptr<Sprite>, 20> sprite_titleBlocks_{}; // ”wŒiƒAƒCƒeƒ€
-    unique_ptr<Sprite> sprite_titleTree_{ std::make_unique<Sprite>("title_atlas", CMode::ID) };
-    unique_ptr<Sprite> sprite_titleLogo_{ std::make_unique<Sprite>("title_atlas", CMode::ID) };
-    unique_ptr<Sprite> sprite_titleFrame_{ std::make_unique<Sprite>("titleFrame", CMode::ID) };
+    std::vector<std::unique_ptr<Obj3d>> objects_;
+    LevelData* lvdPtr_;
+
+    //std::array<unique_ptr<Sprite>, 6> sprite_titleBackGrounds_{}; // ”wŒiŠG
+    //std::array<unique_ptr<Sprite>, 6> sprite_titleBackPieces_{}; // ”wŒiƒAƒCƒeƒ€
+    //std::array<unique_ptr<Sprite>, 20> sprite_titleBlocks_{}; // ”wŒiƒAƒCƒeƒ€
+    //unique_ptr<Sprite> sprite_titleTree_{ std::make_unique<Sprite>("title_atlas", CMode::ID) };
+    //unique_ptr<Sprite> sprite_titleLogo_{ std::make_unique<Sprite>("title_atlas", CMode::ID) };
+    //unique_ptr<Sprite> sprite_titleFrame_{ std::make_unique<Sprite>("titleFrame", CMode::ID) };
 };
 
